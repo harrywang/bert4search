@@ -1,6 +1,6 @@
 # bert4search
 
-This repo is created for the idea using Bert4Search (temp name). The project is trying to bring the state of art from Natural Language Processing, especially the BERT model into the search sequential analysis.
+This repo is created for the idea using __Bert4Search__ (temp name). The project is trying to bring the state of art from Natural Language Processing, especially the BERT model into the search sequential analysis.
 
 ## Local Setup
 
