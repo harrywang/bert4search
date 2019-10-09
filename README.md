@@ -13,11 +13,7 @@ $ source venv/bin/activate
 $ pip install -r requirements.txt
 ```
 ## EDA
-Go to the eda folder firstly.
-```shell
-$ cd <repodir>/eda
-```
-Run `$ jupyter notebook` to go over the EDA notebook.
+Go to the eda folder firstly. Then run `$ jupyter notebook` to go over the EDA notebook.
 
 ## Data
 The data used for this project is EDGAR dataset.
