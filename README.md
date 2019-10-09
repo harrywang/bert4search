@@ -14,3 +14,8 @@ $ pip install -r requirements.txt
 ```
 
 Run `$ jupyter notebook` to go over the EDA notebook.
+
+## Data
+The data used for this project is EDGAR dataset.
+
+<continue..>
