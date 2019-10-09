@@ -13,8 +13,10 @@ $ source venv/bin/activate
 $ pip install -r requirements.txt
 ```
 ## EDA
-Go to the eda folder firstly.  
-
+Go to the eda folder firstly.
+```shell
+$ cd <repodir>/eda
+```
 Run `$ jupyter notebook` to go over the EDA notebook.
 
 ## Data
