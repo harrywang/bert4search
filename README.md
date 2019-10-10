@@ -16,6 +16,8 @@ $ pip install -r requirements.txt
 Go to the eda folder firstly. Then run `$ jupyter notebook` to go over the EDA notebook.
 
 ## Data
-The data used for this project is EDGAR dataset.
+The data used for this project is EDGAR Log File dataset. It covers the internet search traffic for EDGAR filings through SEC.gov generally covering the period February 14, 2003 through June 30, 2017.  The data is intended to provide insight into the usage of publicly accessible EDGAR company filings in a simple but extensive manner. 
 
-<continue..>
+The official website for EDGAR Log File Dataset is https://www.sec.gov/dera/data/edgar-log-file-data-set.html.  
+
+The explanation for variables can be found at: https://www.sec.gov/files/EDGAR_variables_FINAL.pdf.
