@@ -8,9 +8,9 @@ The datafile could be found at: https://drive.google.com/drive/folders/1oYCpvZFr
 ## Run the notebook
 To run the notebook, after following the insructions to clone the repo and go the "eda" folder. Firstly, install the required package by running 
 ```shell
-$pip install -r requirements.txt
+$ pip install -r requirements.txt
 ```
 Then the notebook could be executed by running the following demand in the terminal.
 ```shell
-$jupyter notebook
+$ jupyter notebook
 ```
