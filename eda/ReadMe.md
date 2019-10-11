@@ -10,3 +10,7 @@ To run the notebook, after following the insructions to clone the repo and go th
 ```shell
 $pip install -r requirements.txt
 ```
+Then the notebook could be executed by running the following demand in the terminal.
+```shell
+$jupyter notebook
+```
