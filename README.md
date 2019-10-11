@@ -21,6 +21,15 @@ The official website for EDGAR Log File Dataset is https://www.sec.gov/dera/data
 
 The explanation for variables can be found at: https://www.sec.gov/files/EDGAR_variables_FINAL.pdf.
 
+## Company
+EDGAR identifies company by using the Central Index Key (CIK). 
+
+To find a CIK for a company, you can go to the website: https://www.sec.gov/edgar/searchedgar/cik.htm.  
+
+To find a company based on specific CIK, you can use the following website: https://www.sec.gov/edgar/searchedgar/companysearch.html.
+
+
+
 ## EDA
 Go to the eda folder firstly. Then run `$ jupyter notebook` to go over the EDA notebook.
 
