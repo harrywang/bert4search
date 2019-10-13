@@ -34,3 +34,6 @@ To find a company based on specific CIK, you can use the following website: http
 Go to the eda folder firstly. Then run `$ jupyter notebook` to go over the EDA notebook.
 
 
+## Data Cleaning
+
+<continue..>
