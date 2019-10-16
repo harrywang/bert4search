@@ -15,7 +15,7 @@ def getEveryDay(begin_date,end_date):
         begin_date += datetime.timedelta(days=1)
     return date_list
 
-date = getEveryDay("2017-02-01", "2017-02-28")
+date = getEveryDay("2017-01-01", "2017-01-31")
 
 # Import the file
 
@@ -50,8 +50,7 @@ for i in range(len(date)):
         ['zone', 'accession', 'extention', 'code', 'size', 'idx', 'norefer', 'noagent', 'find', 'crawler', 'browser'],
         axis=1)
 
-    search.to_csv(file_name,index=None)
-    print("Done!")
+    #search.to_csv(file_name,index=None)
 
 
 
