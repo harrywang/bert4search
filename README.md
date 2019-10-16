@@ -37,3 +37,17 @@ Go to the eda folder firstly. Then run `$ jupyter notebook` to go over the EDA n
 ## Data Cleaning
 
 <continue..>
+
+
+## Search Freuqnecy Count - Using Jan 2017 Data
+Count: 217380  
+
+Mean: 17  
+
+25%: 1  
+
+50%: 3  
+
+75%: 6  
+
+Max: 37322

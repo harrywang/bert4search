@@ -3,6 +3,7 @@
 
 import numpy as np
 import pandas as pd
+import datetime
 
 def getEveryDay(begin_date,end_date):
     date_list = []
@@ -17,7 +18,44 @@ def getEveryDay(begin_date,end_date):
 date = getEveryDay("2017-01-01", "2017-01-31")
 
 for i in range(len(date)):
+    d = date[i]
+    df = pd.read_csv("/Users/rachelzheng/Documents/GitHub/bert4search/pre-train/data/daily_clean_search/cleaned"+d+".csv")
+    df = df.drop(["date","time"],axis=1)
+    filename = "search" + d + ".csv"
+    unique_ip = df.ip.unique().tolist()
+    gk = df.groupby("ip")
+    search_seq = []
+    for j in range(len(unique_ip)):
+        data = gk.get_group(unique_ip[j])
+        search_seq.append(list(np.transpose(data["cik"])))
     if i == 0:
-        df = pd.read_csv("/Users/rachelzheng/Documents/GitHub/bert4search/pre-train/data/daily_clean_search/cleaned"+date[i]+".csv ")
-        
+        t = pd.DataFrame(search_seq)
+        #a = pd.DataFrame(unique_ip)
+        #a["date"] = d
+        #a = pd.concat([a, t], axis=1)
+    else:
+        t = pd.concat([t,pd.DataFrame(search_seq)],axis=0)
 
+# t is the dataframe for the search sequence for every ip addresses satisfied the conditions.
+
+l = []
+for i in range(t.shape[0]):
+    l.append(t.iloc[i,].unique().tolist())
+
+unique_t = pd.DataFrame(l)
+
+for i in range(unique_t.shape[1]):
+    name = "search"+str(i)
+    if i == 0:
+        a = unique_t.iloc[:,i].value_counts().reset_index()
+        a.columns = ["cik",name]
+    else:
+        temp = unique_t.iloc[:,i].value_counts().reset_index()
+        temp.columns = ["cik",name]
+        a = pd.merge(a,temp,on="cik",how="outer")
+a["count"] = a.drop(["cik"],axis=1).apply(lambda x: x.sum(), axis=1)
+
+b = a[a["count"]>200]
+
+# vocab contains 3948 firms which has been searched at least 200 times by different users in a month (Jan 2017).
+vocab = b.cik.tolist()
