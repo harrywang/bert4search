@@ -59,3 +59,12 @@ b = a[a["count"]>200]
 
 # vocab contains 3948 firms which has been searched at least 200 times by different users in a month (Jan 2017).
 vocab = b.cik.tolist()
+
+# c gives the training sample which only contains the firm in the "vocab" file.
+c = []
+for i in range(test.shape[0]):
+    a = pd.DataFrame(test.iloc[i,])
+    a.columns = ["cik"]
+    b = pd.merge(a,v,on="cik",how="inner")
+    c.append(b.cik.tolist())
+
