@@ -6,6 +6,8 @@ This folder is created for applying the pre-training method in the bert4search p
 
 To pre-train the model, we use the data from Jan 01, 2017 to Feb 28, 2017. To apply the analysis result from EDA report, basic data cleaning is required.  
 
+## Data Cleaning
+
 The data cleaning steps include:  
 
 1. Restrict to the ip who needs to identify itself not as crawler (crawler=0).  
@@ -16,4 +18,9 @@ The data cleaning steps include:
 
 The row of the final after-clean dataset for retraining represents the daily search activity of the ip which satisfies all data cleaning conditions.
 
-To better apply the BERT into this project, the searched companies are restricted to the top 30000 frequent searched firms using the final after-clean dataset. For each row of the after-clean dataset, the duplicate search for one company will be count as 1. Using the unique search count for each firm (cik-based) could identify the top 30000 frequent search firms.
+To better apply the BERT into this project, the searched companies are restricted to the top frequent searched firms using the final after-clean dataset. For each row of the after-clean dataset, the duplicate search for one company will be count as 1. Using the unique search count for each firm (cik-based) could identify the top 30000 frequent search firms.
+
+To select the top frequent searched firms, we firstly count the frequency of unique firms for each search sequence from satisfied IP address. Based on the distribution of the searched frequency, we select the top 3948 frequent firms, which have been searched at least 200 times.  This gives us the "vocabulary" to learn.  
+
+Once we have the "vocab" file, we replace the original search sequences with the new sequence only with the firms in the "vocab" file.  This gives us the training sample for the proposed model.  
+
