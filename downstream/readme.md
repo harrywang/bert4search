@@ -29,7 +29,7 @@ You can start the tool as follows:
 bert-serving-start -model_dir /tmp/pretrain4search/ -num_worker=1
 ```
 
-## Industrial Classification Information. 
+## Industrial Classification Information 
 
 There are three types of most common industrial classification standards:  
 

@@ -91,3 +91,5 @@ pre-train/daily_clean_search/cleaned20170101.csv
 .DS_Store
 .DS_Store
 downstream/__pycache__/bert_client.cpython-37.pyc
+.DS_Store
+*.xlsx
