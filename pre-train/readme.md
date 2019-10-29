@@ -33,7 +33,7 @@ The input is a plain text file, with one sequence per line, which represents the
 
 __Note__: Please note that here the search sequence only contains the 3948 companies which are identified in previous data cleaning firms. Those companies have been searched at least 200 times in January 2017 by different IP addresses.  
 
-Here's how to run the pre-training. Do not include init_checkpoint if you are pre-training from scratch. The model configuration (including vocab size) is specified in ```bert_config_file`. The max_seq_length and max_predictions_per_seq parameters passed to __run_pretraining.py__ must be the same as __create_pretraining_data.py__. The __max_predictions_per_seq__ is the maximum number of masked LM predictions per sequence. You should set this to around __max_seq_length__ * __masked_lm_prob__.
+Here's how to run the pre-training. Do not include init_checkpoint if you are pre-training from scratch. The model configuration (including vocab size) is specified in ```bert_config_file```. The max_seq_length and max_predictions_per_seq parameters passed to __run_pretraining.py__ must be the same as __create_pretraining_data.py__. The __max_predictions_per_seq__ is the maximum number of masked LM predictions per sequence. You should set this to around __max_seq_length__ * __masked_lm_prob__.
 
 ### Local Setup
 To run this program, you need to set up the required package in your local folder (__bert_pretrain__ folder) firstly.  
