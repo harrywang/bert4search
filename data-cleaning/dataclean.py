@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import datetime
 
-# Here we use the EDGAR Log File from Jan 01, 2017 to Jan 31, 2017.
+# Define the function could list the dates in the setting time period, since the Log file is daily search file.
 def getEveryDay(begin_date,end_date):
     date_list = []
     begin_date = datetime.datetime.strptime(begin_date, "%Y-%m-%d")
@@ -15,6 +15,7 @@ def getEveryDay(begin_date,end_date):
         begin_date += datetime.timedelta(days=1)
     return date_list
 
+# Here we use the EDGAR Log File from Jan 01, 2017 to Jan 31, 2017.
 date = getEveryDay("2017-01-01", "2017-01-31")
 
 # Import the file
@@ -26,8 +27,8 @@ date = getEveryDay("2017-01-01", "2017-01-31")
 
 for i in range(len(date)):
     raw = pd.read_csv("/Volumes/Untitled/Summer Paper/log2017data/data/log"+str(date[i])+".csv")
-    #raw = pd.read_csv("/Users/rachelzheng/Documents/GitHub/bert4search/eda/log"+str(date[0])+".csv")
     file_name = "cleaned" + str(date[i]) + ".csv"
+    # Clean the ip address which self identifies as not crawler. (Need to set "crawler=0")
     gk = raw[raw["crawler"] == 0].groupby("ip")
     unique_ip = raw[raw["crawler"] == 0].ip.unique()
 
