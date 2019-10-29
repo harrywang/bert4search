@@ -97,3 +97,9 @@ downstream/__pycache__/bert_client.cpython-37.pyc
 *.iml
 .DS_Store
 *.xml
+*.tfrecord
+*.txt
+pre-train/bert_pretrain/search.txt
+pre-train/bert_pretrain/search.txt
+pre-train/bert_pretrain/search.txt
+pre-train/bert_pretrain/search.txt
