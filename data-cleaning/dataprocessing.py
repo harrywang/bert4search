@@ -5,6 +5,7 @@ import numpy as np
 import pandas as pd
 import datetime
 
+# Define the function to list out the dates in the time period we want.
 def getEveryDay(begin_date,end_date):
     date_list = []
     begin_date = datetime.datetime.strptime(begin_date, "%Y-%m-%d")
@@ -15,6 +16,7 @@ def getEveryDay(begin_date,end_date):
         begin_date += datetime.timedelta(days=1)
     return date_list
 
+# Here we use the EDGAR log file from Jan 1, 2017 to Jan 31, 2017.
 date = getEveryDay("2017-01-01", "2017-01-31")
 
 for i in range(len(date)):

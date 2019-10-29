@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import datetime
 
-# Here we use the EDGAR Log File from Jan 01, 2017 to Feb 28, 2017.
+# Here we use the EDGAR Log File from Jan 01, 2017 to Jan 31, 2017.
 def getEveryDay(begin_date,end_date):
     date_list = []
     begin_date = datetime.datetime.strptime(begin_date, "%Y-%m-%d")
