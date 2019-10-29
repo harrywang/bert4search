@@ -43,7 +43,7 @@ $ python3.7 -m venv venv
 $ source venv/bin/activate
 $ pip install -r requirements.txt
 ```
-Before you go into the next two steps, it is necessary to make __run.txt__ and __run_pretrain.txt__ files executable.
+Before you go into the next two steps, it is necessary to make ```run.txt``` and ```run_pretrain.txt``` files executable.
 
 ### Step 1. Data Generation
 The output is a set of __tf.train.Examples__ serialized into __TFRecord__ file format.
