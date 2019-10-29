@@ -96,3 +96,4 @@ downstream/__pycache__/bert_client.cpython-37.pyc
 .DS_Store
 *.iml
 .DS_Store
+*.xml
