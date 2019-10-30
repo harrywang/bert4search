@@ -4,7 +4,7 @@
 
 The pre-training step is learned from the design of the Bidirectional Encoder Representations from Transformers (BERT). Here is the link for the official BERT repo: https://github.com/google-research/bert.  
 
-The data (__search.txt__) for this step can be found at: https://drive.google.com/file/d/1ZMNM0RtNZVJ5fT3xwNX92PPJ5D_0ERm8/view?usp=sharing.
+The data (```search-log-jan-2017.txt```) for this step can be found at: https://drive.google.com/file/d/1ZMNM0RtNZVJ5fT3xwNX92PPJ5D_0ERm8/view?usp=sharing.
 The input is a plain text file, with one sequence per line, which represents the daily search sequence from one IP address. Different search sequences from different IP address or different days are delimited by empty lines. 
 
 __Note__: Please note that here the search sequence only contains the 3948 companies which are identified in previous data cleaning firms. Those companies have been searched at least 200 times in January 2017 by different IP addresses.  
