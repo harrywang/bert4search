@@ -37,8 +37,17 @@ Go to the eda folder firstly. Then run `$ jupyter notebook` to go over the EDA n
 
 ## Step 1. Data Cleaning
 
+Clean the data based on several conditions.
+
 ## Step 2. Pre-Training
+
+Bringing the spirit of BERT to pre-train the model.
 
 ## Step 3. Classification
 
+Using the pre-trained model, we identify the top 10 related firms corresponding to each target firm.
+
+
 ## Step 4. Evaluation
+
+Evaluate the performance of the model.
