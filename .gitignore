@@ -120,6 +120,6 @@ static/tmp/
 
 pre-train/.idea/
 pre-train/daily_clean_search/
-pre-train/bert_pretrain/
+pre-train/data/
 
 .DS_Store

@@ -1,5 +1,6 @@
+#!/bin/sh
 python run_pretraining.py \
-  --input_file=./tf_examples.tfrecord \
+  --input_file=./data/tf_examples.tfrecord \
   --output_dir=./pretraining_output \
   --do_train=True \
   --do_eval=True \
