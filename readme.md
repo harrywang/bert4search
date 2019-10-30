@@ -35,20 +35,19 @@ To find a company based on specific CIK, you can use the following website: http
 Go to the eda folder firstly. Then run `$ jupyter notebook` to go over the EDA notebook.
 
 
-## Data Cleaning
+## Step 1. Data Cleaning
 
-<continue..>
+Clean the data based on several conditions.
+
+## Step 2. Pre-Training
+
+Bringing the spirit of BERT to pre-train the model.
+
+## Step 3. Classification
+
+Using the pre-trained model, we identify the top 10 related firms corresponding to each target firm.
 
 
-## Search Freuqnecy Count - Using Jan 2017 Data
-Count: 217380  
+## Step 4. Evaluation
 
-Mean: 17  
-
-25%: 1  
-
-50%: 3  
-
-75%: 6  
-
-Max: 37322
+Evaluate the performance of the model.
