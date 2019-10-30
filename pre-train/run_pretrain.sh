@@ -1,3 +1,4 @@
+#!/bin/sh
 python run_pretraining.py \
   --input_file=./tf_examples.tfrecord \
   --output_dir=./pretraining_output \

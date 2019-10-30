@@ -1,5 +1,6 @@
+#!/bin/sh
 python create_pretraining_data.py \
-  --input_file=./search.txt \
+  --input_file=./data/search.txt \
   --output_file=./tf_examples.tfrecord \
   --vocab_file=./vocab.txt \
   --do_lower_case=True \
