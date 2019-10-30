@@ -35,20 +35,10 @@ To find a company based on specific CIK, you can use the following website: http
 Go to the eda folder firstly. Then run `$ jupyter notebook` to go over the EDA notebook.
 
 
-## Data Cleaning
+## Step 1. Data Cleaning
 
-<continue..>
+## Step 2. Pre-Training
 
+## Step 3. Classification
 
-## Search Freuqnecy Count - Using Jan 2017 Data
-Count: 217380  
-
-Mean: 17  
-
-25%: 1  
-
-50%: 3  
-
-75%: 6  
-
-Max: 37322
+## Step 4. Evaluation
