@@ -1,107 +1,125 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
 
-eda/log20170301.csv
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# celery beat schedule file
+celerybeat-schedule
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+
+# result
+result/
+
+# ckpt
+ckpt/
+
+# PyCharm
+.idea/
+
+.DS_store
+
+# results for web demo
+static/tmp/
+
+
+pre-train/.idea/
+pre-train/daily_clean_search/
+pre-train/bert_pretrain/
+
 .DS_Store
-.DS_Store
-.DS_Store
-pre-train/.idea/vcs.xml
-pre-train/.idea/pre-train.iml
-pre-train/.idea/other.xml
-pre-train/.idea/modules.xml
-pre-train/.idea/misc.xml
-pre-train/.idea/inspectionProfiles/profiles_settings.xml
-.DS_Store
-pre-train/.idea/inspectionProfiles/profiles_settings.xml
-pre-train/.idea/misc.xml
-pre-train/.idea/modules.xml
-pre-train/.idea/other.xml
-pre-train/.idea/pre-train.iml
-pre-train/.idea/vcs.xml
-pre-train/daily_clean_search/cleaned20170101.csv
-pre-train/daily_clean_search/cleaned20170102.csv
-pre-train/daily_clean_search/cleaned20170103.csv
-pre-train/daily_clean_search/cleaned20170104.csv
-pre-train/daily_clean_search/cleaned20170105.csv
-pre-train/daily_clean_search/cleaned20170106.csv
-pre-train/daily_clean_search/cleaned20170107.csv
-pre-train/daily_clean_search/cleaned20170108.csv
-pre-train/daily_clean_search/cleaned20170109.csv
-pre-train/daily_clean_search/cleaned20170110.csv
-pre-train/daily_clean_search/cleaned20170111.csv
-pre-train/daily_clean_search/cleaned20170112.csv
-pre-train/daily_clean_search/cleaned20170113.csv
-pre-train/daily_clean_search/cleaned20170114.csv
-pre-train/daily_clean_search/cleaned20170115.csv
-pre-train/daily_clean_search/cleaned20170116.csv
-pre-train/daily_clean_search/cleaned20170117.csv
-pre-train/daily_clean_search/cleaned20170118.csv
-pre-train/daily_clean_search/cleaned20170119.csv
-pre-train/daily_clean_search/cleaned20170120.csv
-pre-train/daily_clean_search/cleaned20170121.csv
-pre-train/daily_clean_search/cleaned20170122.csv
-pre-train/daily_clean_search/cleaned20170123.csv
-pre-train/daily_clean_search/cleaned20170124.csv
-pre-train/daily_clean_search/cleaned20170125.csv
-pre-train/daily_clean_search/cleaned20170126.csv
-pre-train/daily_clean_search/cleaned20170127.csv
-pre-train/daily_clean_search/cleaned20170128.csv
-pre-train/daily_clean_search/cleaned20170129.csv
-pre-train/daily_clean_search/cleaned20170130.csv
-pre-train/daily_clean_search/cleaned20170131.csv
-*.csv
-pre-train/daily_clean_search/cleaned20170131.csv
-pre-train/daily_clean_search/cleaned20170130.csv
-pre-train/daily_clean_search/cleaned20170129.csv
-pre-train/daily_clean_search/cleaned20170128.csv
-pre-train/daily_clean_search/cleaned20170127.csv
-pre-train/daily_clean_search/cleaned20170126.csv
-pre-train/daily_clean_search/cleaned20170125.csv
-pre-train/daily_clean_search/cleaned20170124.csv
-pre-train/daily_clean_search/cleaned20170123.csv
-pre-train/daily_clean_search/cleaned20170122.csv
-pre-train/daily_clean_search/cleaned20170121.csv
-pre-train/daily_clean_search/cleaned20170120.csv
-pre-train/daily_clean_search/cleaned20170119.csv
-pre-train/daily_clean_search/cleaned20170118.csv
-pre-train/daily_clean_search/cleaned20170117.csv
-pre-train/daily_clean_search/cleaned20170116.csv
-pre-train/daily_clean_search/cleaned20170115.csv
-pre-train/daily_clean_search/cleaned20170114.csv
-pre-train/daily_clean_search/cleaned20170113.csv
-pre-train/daily_clean_search/cleaned20170112.csv
-pre-train/daily_clean_search/cleaned20170111.csv
-pre-train/daily_clean_search/cleaned20170110.csv
-pre-train/daily_clean_search/cleaned20170109.csv
-pre-train/daily_clean_search/cleaned20170108.csv
-pre-train/daily_clean_search/cleaned20170107.csv
-pre-train/daily_clean_search/cleaned20170106.csv
-pre-train/daily_clean_search/cleaned20170105.csv
-pre-train/daily_clean_search/cleaned20170104.csv
-pre-train/daily_clean_search/cleaned20170103.csv
-pre-train/daily_clean_search/cleaned20170102.csv
-pre-train/daily_clean_search/cleaned20170101.csv
-.idea/vcs.xml
-.idea/other.xml
-.idea/modules.xml
-.idea/misc.xml
-.idea/inspectionProfiles/profiles_settings.xml
-.idea/bert4search.iml
-.DS_Store
-.DS_Store
-.DS_Store
-.DS_Store
-.DS_Store
-downstream/__pycache__/bert_client.cpython-37.pyc
-.DS_Store
-*.xlsx
-.DS_Store
-*.iml
-.DS_Store
-*.xml
-*.tfrecord
-*.txt
-pre-train/bert_pretrain/search.txt
-pre-train/bert_pretrain/search.txt
-pre-train/bert_pretrain/search.txt
-pre-train/bert_pretrain/search.txt
-pre-train/bert_pretrain/search.txt
-pre-train/bert_pretrain/search.txt

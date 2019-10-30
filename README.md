@@ -10,19 +10,20 @@ Tested with Python 3.7 via virtual environment. Clone the repo, go to the repo f
 ```shell
 $ python3.7 -m venv venv
 $ source venv/bin/activate
+$ pip install -r requirements.txt
 ```
 
 ## Data
-The data used for this project is EDGAR Log File dataset. It covers the internet search traffic for EDGAR filings through SEC.gov generally covering the period February 14, 2003 through June 30, 2017.  The data is intended to provide insight into the usage of publicly accessible EDGAR company filings in a simple but extensive manner. 
+The data used for this project is EDGAR Log File dataset. It covers the internet search traffic for EDGAR filings through SEC.gov generally covering the period February 14, 2003 through June 30, 2017.  The data is intended to provide insight into the usage of publicly accessible EDGAR company filings in a simple but extensive manner.
 
-EDGAR is the official electronically document submitting system for all public domestic companies in the United States, according to the requirement of SEC. This also provides a platform for investors to look up for the performance of the firms. The searching activities from global investors to EDGAR dataset is free to public now, and it provides a valuable source for everyone to study on the investors' searching behavior.
+EDGAR is the official electronically document submitting system for all public domestic companies in the United States, according to the requirement of SEC. This also provides a platform for investors to look up for the performance of the firms. The log of searching activities from global investors to EDGAR dataset is free to public now, and it provides a valuable source for everyone to study investors' searching behavior.
 
 The official website for EDGAR Log File Dataset is https://www.sec.gov/dera/data/edgar-log-file-data-set.html.  
 
 The explanation for variables can be found at: https://www.sec.gov/files/EDGAR_variables_FINAL.pdf.
 
 ## Company
-EDGAR identifies company by using the Central Index Key (CIK). 
+EDGAR identifies company by using the Central Index Key (CIK).
 
 To find a CIK for a company, you can go to the website: https://www.sec.gov/edgar/searchedgar/cik.htm.  
 
