@@ -1,7 +1,7 @@
 #!/bin/sh
 python create_pretraining_data.py \
   --input_file=./data/search.txt \
-  --output_file=./tf_examples.tfrecord \
+  --output_file=./data/tf_examples.tfrecord \
   --vocab_file=./vocab.txt \
   --do_lower_case=True \
   --max_seq_length=100 \
