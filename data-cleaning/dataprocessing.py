@@ -21,10 +21,13 @@ date = getEveryDay("2017-01-01", "2017-01-31")
 
 for i in range(len(date)):
     d = date[i]
-    df = pd.read_csv("/Users/rachelzheng/Documents/GitHub/bert4search/pre-train/data/daily_clean_search/cleaned"+d+".csv")
+    # Import the cleaned search data
+    df = pd.read_csv("/Users/rachelzheng/Documents/GitHub/bert4search/data/daily_clean_search/cleaned"+d+".csv")
     df = df.drop(["date","time"],axis=1)
     filename = "search" + d + ".csv"
+    # List the unique IP address
     unique_ip = df.ip.unique().tolist()
+    # Read the data by the IP address
     gk = df.groupby("ip")
     search_seq = []
     for j in range(len(unique_ip)):
@@ -32,13 +35,10 @@ for i in range(len(date)):
         search_seq.append(list(np.transpose(data["cik"])))
     if i == 0:
         t = pd.DataFrame(search_seq)
-        #a = pd.DataFrame(unique_ip)
-        #a["date"] = d
-        #a = pd.concat([a, t], axis=1)
     else:
         t = pd.concat([t,pd.DataFrame(search_seq)],axis=0)
 
-# t is the dataframe for the search sequence for every ip addresses satisfied the conditions.
+# t is the dataframe for the search sequence for every IP addresses satisfied the conditions.
 
 l = []
 for i in range(t.shape[0]):
@@ -57,16 +57,26 @@ for i in range(unique_t.shape[1]):
         a = pd.merge(a,temp,on="cik",how="outer")
 a["count"] = a.drop(["cik"],axis=1).apply(lambda x: x.sum(), axis=1)
 
+# Here we only focuses on the companies that have been searched over 200 times in Jan 2017
 b = a[a["count"]>200]
 
 # vocab contains 3948 firms which has been searched at least 200 times by different users in a month (Jan 2017).
 vocab = b.cik.tolist()
 
+v = pd.DataFrame(vocab)
+v.columns = ["cik"]
+
 # c gives the training sample which only contains the firm in the "vocab" file.
 c = []
-for i in range(test.shape[0]):
-    a = pd.DataFrame(test.iloc[i,])
+for i in range(t.shape[0]):
+    a = pd.DataFrame(t.iloc[i,])
     a.columns = ["cik"]
     b = pd.merge(a,v,on="cik",how="inner")
     c.append(b.cik.tolist())
 
+# Store the vocab file for BERT training
+with open("vocab.txt", "w") as output:
+    output.write(str(vocab))
+
+d = pd.DataFrame(c)
+d.to_csv("sample_vocab.csv",index=None)

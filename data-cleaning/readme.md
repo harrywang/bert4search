@@ -26,3 +26,27 @@ To select the top frequent searched firms, we firstly count the frequency of uni
 
 Once we have the "vocab" file, we replace the original search sequences with the new sequence only with the firms in the "vocab" file.  This gives us the training sample for the proposed model.  
 
+## Get Start
+
+Because of the memory limit and the large size of the original daily EDGAR log file, we have two steps to clean the data. The ```dataclean.py``` file cleans the original daily search Log file and the ```dataprocessing.py``` generates the input file for next pre-training step. 
+
+### Local Setup
+```shell
+$ python3.7 -m venv venv
+$ source venv/bin/activate
+$ pip install -r requirements.txt
+```
+
+### Step 1.Data Clean
+
+In the first step, we clean the daily search file and keep the observations satisfied the conditions.  
+```shell
+$ python3 dataclean.py
+```
+
+### Step 2. Data Generation
+In the second step, we use the cleaned daily search files to generate the input file for pre-training step.
+```shell
+$ python3 dataprocessing.py
+```
+

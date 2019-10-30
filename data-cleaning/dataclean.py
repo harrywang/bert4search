@@ -30,6 +30,7 @@ for i in range(len(date)):
     file_name = "cleaned" + str(date[i]) + ".csv"
     # Clean the ip address which self identifies as not crawler. (Need to set "crawler=0")
     gk = raw[raw["crawler"] == 0].groupby("ip")
+    # List the unique ip address that satisfies the conditions
     unique_ip = raw[raw["crawler"] == 0].ip.unique()
 
     search_seq = []
@@ -44,6 +45,7 @@ for i in range(len(date)):
     c = pd.concat([pd.DataFrame(unique_ip), b], axis=1)
     c.columns = ["ip", "Frequency"]
 
+    # Set the conditions that the IP address needs to search for at least 3 times but no more than 100 times in a day.
     final_ip = pd.DataFrame(c[(c["Frequency"] <= 100) & (c["Frequency"] >= 3)].ip)
     final_ip.columns = ["ip"]
 
@@ -51,7 +53,8 @@ for i in range(len(date)):
         ['zone', 'accession', 'extention', 'code', 'size', 'idx', 'norefer', 'noagent', 'find', 'crawler', 'browser'],
         axis=1)
 
-    #search.to_csv(file_name,index=None)
+    # Save the cleaned data within the name "cleaned+date"
+    search.to_csv(file_name,index=None)
 
 
 
