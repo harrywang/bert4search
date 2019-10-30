@@ -9,9 +9,9 @@ Here's how to run the pre-training. Do not include init_checkpoint if you are pr
 ### Data
 
 The data (__search-log-jan-2017.txt__) for this step can be found at: https://drive.google.com/file/d/1ZMNM0RtNZVJ5fT3xwNX92PPJ5D_0ERm8
-The input is a plain text file, with one sequence per line, which represents the daily search sequence from one IP address from Jan 1, 2017 to Jan 31, 2017. Different search sequences from different IP address or different days are delimited by empty lines. Run `$ wc -l search.txt` to find out the total number of lines in the file, which is 744,413
+The input is a plain text file, with one sequence per line, which represents the daily search sequence from one IP address from Jan 1, 2017 to Jan 31, 2017. Different search sequences from different IP address or different days are delimited by empty lines. Run `$ wc -l search-log-jan-2017.txt` to find out the total number of lines in the file, which is 744,413
 
-Download the txt file and put in the /pre-train/data folder and rename to `search.txt`
+Download the txt file and put in the /pre-train/data folder and rename to `search-log-jan-2017.txt`.
 
 __Note__: Please note that here the search sequence only contains the 3948 companies which are identified in previous data cleaning firms. Those companies have been searched at least 200 times in January 2017 by different IP addresses.  
 
