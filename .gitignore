@@ -123,3 +123,6 @@ pre-train/daily_clean_search/
 pre-train/data/
 
 .DS_Store
+
+#Data Folder
+data/

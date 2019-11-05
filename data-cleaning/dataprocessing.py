@@ -63,20 +63,39 @@ b = a[a["count"]>200]
 # vocab contains 3948 firms which has been searched at least 200 times by different users in a month (Jan 2017).
 vocab = b.cik.tolist()
 
-v = pd.DataFrame(vocab)
-v.columns = ["cik"]
-
 # c gives the training sample which only contains the firm in the "vocab" file.
 c = []
 for i in range(t.shape[0]):
-    a = pd.DataFrame(t.iloc[i,])
-    a.columns = ["cik"]
-    b = pd.merge(a,v,on="cik",how="inner")
-    c.append(b.cik.tolist())
+    a = t.iloc[i,].tolist()
+    ac = [x for x in a if str(x) != 'nan']
+    ai = [str(int(i)) for i in ac]
+    b = list(filter(vocab.__contains__, ai))
+    if len(b) > 0:
+        c.append(b)
 
 # Store the vocab file for BERT training
-with open("vocab.txt", "w") as output:
-    output.write(str(vocab))
+o = ["[PAD]","[UNK]", "[CLS]", "[SEP]", "[MASK]"]
+for i in range(len(o)):
+    with open("vocab.txt", "a") as output:
+        output.write(o[i])
+        output.write("\r\n")
 
-d = pd.DataFrame(c)
-d.to_csv("sample_vocab.csv",index=None)
+for i in range(len(vocab)):
+    with open("vocab.txt", "a") as output:
+        output.write(str(int(vocab[i])))
+        output.write("\r\n")
+
+# Save the final sequence file as the input for BERT pre-training
+for i in range(len(c)):
+    if len(c[i]) != 0:
+        with open("search-log-jan-2017.txt", "a") as output:
+            results = list(map(int, c[i]))
+            for i in range(len(results)):
+                if i != len(results)-1:
+                    output.write(str(results[i]))
+                    output.write(" ")
+                else:
+                    output.write(str(results[i]))
+                    output.write(".")
+                    output.write("\n")
+                    output.write("\n")

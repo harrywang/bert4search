@@ -8,11 +8,11 @@ import statistics
 # Before run this project, you should have the firms in S&P 500 Index and their top related firms from the pre-training steps.
 
 # Import data from pre-training steps.
-df = pd.read_csv("/Users/rachelzheng/Documents/GitHub/bert4search/data/top10firms_trainstep5000.csv")
+df = pd.read_csv("/Users/rachelzheng/Documents/GitHub/bert4search/data/top10firms_trainstep1000.csv")
 # In "df", it contains the target firm in S&P 500 Index and the top 10 related firms from pre-training.
 
 # Import the file contains Ticker, Company Name and GIC Sectors.
-stock = pd.read_excel("sic_sp500.xlsx")
+stock = pd.read_excel("/Users/rachelzheng/Documents/GitHub/bert4search/data/sic_sp500.xlsx")
 # In "stock", it contains the CIK number, Ticker, Company Name, GIC Sectors.
 
 # Match the cik to sticker.
@@ -35,14 +35,19 @@ t.columns = c
 
 # Similar to the previous match step, we also need to have the monthly return information for each cell in the company.
 # Import the return file (2017)
-r = pd.read_excel("return_div_2017.xlsx", sheet_name="WRDS")
+#r = pd.read_excel("/Users/rachelzheng/Documents/GitHub/bert4search/data/sp500_return.xlsx", sheet_name="WRDS")
+#r = pd.read_excel("/Users/rachelzheng/Documents/GitHub/bert4search/data/sp500_return_nodiv.xlsx", sheet_name="WRDS")
+r = pd.read_excel("/Users/rachelzheng/Documents/GitHub/bert4search/data/sp500_ret_yrs.xlsx", sheet_name = "WRDS")
 
-time = ["02/28/2017", "03/31/2017", "04/28/2017", "05/31/2017", "06/30/2017","07/31/2017", "08/31/2017", "09/29/2017",
-        "10/31/2017", "11/30/2017", "12/29/2017"]
+time = ["02/28/2017", "03/31/2017", "04/28/2017", "05/31/2017", "06/30/2017","07/31/2017", "08/31/2017", "09/29/2017","10/31/2017", "11/30/2017", "12/29/2017"]
+#time = ["01/31/2018", "02/28/2018", "03/29/2018", "04/30/2018", "05/31/2018", "06/29/2018","07/31/2018","08/31/2018", "09/29/2018", "10/31/2018", "11/30/2018", "12/31/2018"]
+
 
 def to_return(select):
-    df1 = pd.merge(t[select], rt[["Ticker Symbol", "Returns"]], how='left', left_on=select, right_on="Ticker Symbol")
-    df2 = df1["Returns"]
+    #df1 = pd.merge(t[select], rt[["Ticker Symbol", "Returns"]], how='left', left_on=select, right_on="Ticker Symbol")
+    #df2 = df1["Returns"]
+    df1 = pd.merge(t[select], rt[["Ticker Symbol", "Equal-Weighted Return-incl. dividends"]], how='left', left_on=select, right_on="Ticker Symbol")
+    df2 = df1["Equal-Weighted Return-incl. dividends"]
     return df2
 
 r2 = []
