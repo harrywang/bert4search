@@ -39,15 +39,17 @@ c = ["target","sbp1","sbp2","sbp3","sbp4","sbp5","sbp6","sbp7","sbp8","sbp9","sb
 dsp.columns = c
 
 # Import the return information
-r = pd.read_excel("/Users/rachelzheng/Documents/GitHub/bert4search/data/sp500_return.xlsx", sheet_name="WRDS")
+#r = pd.read_excel("/Users/rachelzheng/Documents/GitHub/bert4search/data/sp500_return.xlsx", sheet_name="WRDS")
+r = pd.read_excel("/Users/rachelzheng/Documents/GitHub/bert4search/data/sp500_ret_yrs.xlsx", sheet_name = "WRDS")
 
-#time = ["02/28/2017", "03/31/2017", "04/28/2017", "05/31/2017", "06/30/2017","07/31/2017", "08/31/2017", "09/29/2017", "10/31/2017", "11/30/2017", "12/29/2017"]
-time = ["01/31/2018", "02/28/2018", "03/29/2018", "04/30/2018", "05/31/2018", "06/29/2018","07/31/2018",
-        "08/31/2018", "09/29/2018", "10/31/2018", "11/30/2018", "12/31/2018"]
+time = ["02/28/2017", "03/31/2017", "04/28/2017", "05/31/2017", "06/30/2017","07/31/2017", "08/31/2017", "09/29/2017", "10/31/2017", "11/30/2017", "12/29/2017"]
+#time = ["01/31/2018", "02/28/2018", "03/29/2018", "04/30/2018", "05/31/2018", "06/29/2018","07/31/2018", "08/31/2018", "09/29/2018", "10/31/2018", "11/30/2018", "12/31/2018"]
 
 def to_return(select):
-    df1 = pd.merge(dsp[select], rt[["Ticker Symbol", "Returns"]], how='left', left_on=select, right_on="Ticker Symbol")
-    df2 = df1["Returns"]
+    #df1 = pd.merge(dsp[select], rt[["Ticker Symbol", "Returns"]], how='left', left_on=select, right_on="Ticker Symbol")
+    #df2 = df1["Returns"]
+    df1 = pd.merge(dsp[select], rt[["Ticker Symbol", "Equal-Weighted Return-incl. dividends"]], how='left', left_on=select, right_on="Ticker Symbol")
+    df2 = df1["Equal-Weighted Return-incl. dividends"]
     return df2
 
 r2 = []

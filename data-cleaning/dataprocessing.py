@@ -63,16 +63,15 @@ b = a[a["count"]>200]
 # vocab contains 3948 firms which has been searched at least 200 times by different users in a month (Jan 2017).
 vocab = b.cik.tolist()
 
-v = pd.DataFrame(vocab)
-v.columns = ["cik"]
-
 # c gives the training sample which only contains the firm in the "vocab" file.
 c = []
 for i in range(t.shape[0]):
-    a = pd.DataFrame(t.iloc[i,])
-    a.columns = ["cik"]
-    b = pd.merge(a,v,on="cik",how="inner")
-    c.append(b.cik.tolist())
+    a = t.iloc[i,].tolist()
+    ac = [x for x in a if str(x) != 'nan']
+    ai = [str(int(i)) for i in ac]
+    b = list(filter(vocab.__contains__, ai))
+    if len(b) > 0:
+        c.append(b)
 
 # Store the vocab file for BERT training
 o = ["[PAD]","[UNK]", "[CLS]", "[SEP]", "[MASK]"]

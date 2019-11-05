@@ -28,4 +28,4 @@ df = pd.DataFrame(d)
 df.columns = ["target","top1","top2","top3","top4","top5","top6","top7","top8","top9","top10"]
 
 # "top10firms.csv" corresponds to the dataset contains the top 10 related firms to the company in the S&P 500 Index
-df.to_csv("top10firms_trainstep10000.csv", index=None)
+df.to_csv("top10firms_trainstep_test.csv", index=None)
